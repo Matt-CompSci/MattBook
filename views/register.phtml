@@ -1,0 +1,43 @@
+<?php require_once("views/template/header.phtml"); ?>
+
+<div class="container bg-light mt-3" style="max-width: 20em">
+    <div class="text-center">
+        <h4 class="mb-3 text-primary mt-3" style="display: inline-block">Register</h4>
+    </div>
+    <form method="post">
+        <?php if($view->Error !== ""):?>
+            <div class="text-center alert alert-danger" role="alert">
+                <?=$view->Error?>
+            </div>
+        <?php endif;?>
+        <div class="form-group mt-2">
+            <label for="inputEmail">Email address</label>
+            <input type="email" class="form-control" name="inputEmail" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input type="password" class="form-control" name="inputPassword" id="inputPassword" placeholder="Password">
+        </div>
+        <div class="form-group mt-3">
+            <label for="inputFirstName">First Name</label>
+            <input type="text" class="form-control" name="inputFirstName" id="inputFirstName" placeholder="First Name">
+        </div>
+        <div class="form-group">
+            <label for="inputSecondName">Second Name</label>
+            <input type="text" class="form-control" name="inputSecondName" id="inputSecondName" placeholder="Second Name">
+        </div>
+        <div class="form-group mt-3">
+            <label for="inputBirthday">Birthday</label>
+            <input type="date" class="form-control" name="inputBirthday" id="inputBirthday" placeholder="Second Name">
+        </div>
+
+        <div class="form-group mt-3">
+            <div class="g-recaptcha" data-sitekey="6LcRvNYUAAAAADpWfG9O1gpnOBaj_GoY3D67ucDs"></div>
+        </div>
+        <div class="text-center">
+            <button type="submit" name="submit" class="btn btn-primary mt-2 mb-3">Submit</button>
+        </div>
+    </form>
+</div>
+
+<?php require_once("views/template/footer.phtml"); ?>

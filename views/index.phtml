@@ -1,0 +1,16 @@
+<?php require_once("views/template/header.phtml"); ?>
+
+
+<?php if(!isset($_SESSION["loggedIn"])):?>
+    <div class="container">
+        <div class="alert alert-danger mt-2">
+            <a class="alert-link" href="login.php">Login</a>
+            - You must be logged in to view the contents of this site
+        </div>
+
+    </div>
+
+<?php endif;?>
+
+<?php require_once("views/template/footer.phtml"); ?>
+

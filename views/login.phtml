@@ -1,0 +1,40 @@
+<?php require_once("views/template/header.phtml"); ?>
+
+<div class="container bg-light mt-3" style="max-width: 20em">
+    <div class="text-center">
+        <h4 class="mb-3 text-danger mt-3" style="display: inline-block">Log in</h4>
+    </div>
+
+    <?php if($view->Error !== ""):?>
+        <div class="text-center alert alert-danger" role="alert">
+            <?=$view->Error?>
+        </div>
+    <?php endif;?>
+
+    <form method="post" class="text-left">
+        <div class="form-group mt-2">
+            <label for="inputEmail">Email address</label>
+            <input type="email" class="form-control" id="inputEmail" name="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+
+        <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Password">
+        </div>
+
+        <div class="text-center text-danger mb-1">
+            Don't have an account? <a href="register.php">Register</a>
+        </div>
+
+        <div class="text-center text-danger">
+            Forgot Password? <a href="forgotpassword.php">Reset</a>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" name="submit" class="btn btn-primary mb-2 mt-2">Submit</button>
+        </div>
+
+    </form>
+</div>
+
+<?php require_once("views/template/footer.phtml"); ?>
